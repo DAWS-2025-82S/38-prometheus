@@ -9,7 +9,7 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-           - localhost:9093
+           - "localhost:9093"
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
@@ -30,6 +30,7 @@ scrape_configs:
        # The label name is added as a label `label_name=<label_value>` to any timeseries scraped from this config.
         labels:
           app: "prometheus"
+          name: "prometheus"
 # to get the metrics of node using node_exporter          
   # - job_name: "Node-1"
   #   static_configs:
